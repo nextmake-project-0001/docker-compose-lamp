@@ -22,6 +22,7 @@ As of now, we have several different PHP versions. Use appropriate php version a
 - 8.1.x
 - 8.2.x
 - 8.3.x
+- 8.4.x
 
 ## Installation
 
@@ -117,6 +118,13 @@ This is MySQL data directory. The default value for this is `./data/mysql`. All 
 _**MYSQL_LOG_DIR**_
 
 This will be used to store Apache logs. The default value for this is `./logs/mysql`.
+
+_**MYSQL_CNF**_
+
+Define your custom `my.cnf` modifications to meet your database requirments.
+
+**Note:**
+When providing "host" value to the application, eg. wordpress, please use the value `database` where we generally use `localhost`
 
 ## Web Server
 
