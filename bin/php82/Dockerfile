@@ -1,4 +1,4 @@
-FROM php:8.2.1-apache-buster
+FROM php:8.2-apache
 
 # Surpresses debconf complaints of trying to install apt packages interactively
 # https://github.com/moby/moby/issues/4032#issuecomment-192327844
@@ -6,11 +6,13 @@ FROM php:8.2.1-apache-buster
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Update
-RUN apt-get -y update --fix-missing && \
-    apt-get upgrade -y && \
+# RUN apt-get -y update --fix-missing && \
+#     apt-get upgrade -y && \
+#     apt-get --no-install-recommends install -y apt-utils && \
+#     rm -rf /var/lib/apt/lists/*
+RUN apt-get -y update && \
     apt-get --no-install-recommends install -y apt-utils && \
     rm -rf /var/lib/apt/lists/*
-
 
 # Install useful tools and install important libaries
 RUN apt-get -y update && \
